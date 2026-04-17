@@ -83,15 +83,6 @@ let rec runProgram state : unit =
 // TODO: Add empty variables to the initial state!
 let makeProgram prog = { Program = prog; CurrentLine = 10 } 
 
-let helloOnce = 
-  [ 10, Print (Const (StringValue "HELLO WORLD\n")) 
-    10, Print (Const (StringValue "HELLO BASIC\n")) ]
-
-let helloInf = 
-  [ 20, Goto 10
-    10, Print (Const (StringValue "HELLO WORLD\n")) 
-    10, Print (Const (StringValue "HELLO BASIC\n")) ]
-
 let testVariables = 
   [ 10, Assign("S", Const(StringValue "HELLO WORLD\n")) 
     20, Assign("I", Const(NumberValue 1))
@@ -99,10 +90,6 @@ let testVariables =
     40, Print(Variable "S") 
     50, Print(Variable "I") 
     60, Print(Variable "B") ]
-
-// DEMO: Sample programs from Step 1
-runProgram (makeProgram helloOnce)
-runProgram (makeProgram helloInf)
 
 // DEMO: Simpler test program without 'If" (just variables and '=' function) 
 runProgram (makeProgram testVariables)

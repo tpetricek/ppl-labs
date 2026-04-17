@@ -49,7 +49,7 @@ let getCurrentCommand state : Command =
 
 let getNumberValue (value:Value) : int =
   // TODO: Helper that extracts numerical value or fails
-  failwith "TODO: not implement"
+  failwith "TODO: not implemented"
   
 // ----------------------------------------------------------------------------
 // Evaluator

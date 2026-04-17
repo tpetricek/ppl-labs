@@ -6,7 +6,7 @@
 type Value =
   | StringValue of string
 
-// Expression dan be evaluated to get a value (like ML expressions)
+// Expression can be evaluated to get a value (like ML expressions)
 type Expression = 
   | Const of Value
 
@@ -66,7 +66,7 @@ let rec evalExpression (expr:Expression) : Value =
   failwith "TODO: not implemented"
 
 let rec runCurrentCommand state = 
-  // Note taht 'runCommand' takes the command to run (this will be useful in 
+  // Note that 'runCommand' takes the command to run (this will be useful in 
   // the next step), but we define 'runCurrentCommand' so that we can easily
   // run the command on the current line.
   runCommand (getCurrentCommand state) state
@@ -118,7 +118,7 @@ runCurrentCommand helloInf
 |> Option.bind runCurrentCommand
 
 
-// DMEO: Run the program - helloOnce terminates; helloInf
+// DEMO: Run the program - helloOnce terminates; helloInf
 // should run in an infinite loop (Ctrl+C to stop it!)
 runProgram helloOnce
 runProgram helloInf
