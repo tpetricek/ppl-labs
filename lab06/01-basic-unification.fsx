@@ -72,6 +72,12 @@ unify
   (Predicate("human", [Atom("socrates")]))
   (Predicate("human", [Variable("X")]))
 
+// Example: human(odysseus) ~ human(penelope) 
+// Returns: None (fail)
+unify
+  (Predicate("human", [Atom("odysseus")]))
+  (Predicate("human", [Atom("penelope")]))
+
 // Example: human(socrates) ~ mortal(X) 
 // Returns: None (fail)
 unify
